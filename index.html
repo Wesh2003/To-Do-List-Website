@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7f3">
+    <meta name="description" content="A simple, thoughtful to-do list to help you keep track of what you intend to do.">
+    <title>Little List — A calmer to-do list</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Little List home">
+          <span class="brand-mark" aria-hidden="true">✓</span>
+          <span>little list</span>
+        </a>
+        <span class="saved-note"><span class="saved-dot" aria-hidden="true"></span> Saved on this device</span>
+      </header>
+
+      <section class="list-card" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow" id="today-label"></p>
+          <h1 id="page-title">Make room for<br><span>what matters.</span></h1>
+          <p class="subtitle">A little progress is still progress.</p>
+        </div>
+
+        <form class="add-form" id="add-form">
+          <label class="sr-only" for="task-input">What would you like to do?</label>
+          <input id="task-input" name="task" type="text" maxlength="160" placeholder="What would you like to do?" autocomplete="off" required>
+          <button type="submit" aria-label="Add task"><span aria-hidden="true">+</span></button>
+        </form>
+
+        <div class="list-toolbar">
+          <div class="filters" role="group" aria-label="Filter tasks">
+            <button type="button" class="filter-button is-selected" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="filter-button" data-filter="active" aria-pressed="false">To do</button>
+            <button type="button" class="filter-button" data-filter="completed" aria-pressed="false">Done</button>
+          </div>
+          <span class="task-count" id="task-count" aria-live="polite"></span>
+        </div>
+
+        <ul class="task-list" id="task-list" aria-label="Your tasks"></ul>
+
+        <div class="empty-state" id="empty-state">
+          <span class="empty-icon" aria-hidden="true">✳</span>
+          <p class="empty-title">Your mind is clear.</p>
+          <p class="empty-copy">Add a task above to get started.</p>
+        </div>
+
+        <footer class="list-footer">
+          <span id="progress-label">A fresh start, whenever you need one.</span>
+          <button type="button" class="clear-button" id="clear-completed" hidden>Clear completed</button>
+        </footer>
+      </section>
+
+      <p class="page-note">One thing at a time. You’ve got this.</p>
+    </main>
+  </body>
+</html>
